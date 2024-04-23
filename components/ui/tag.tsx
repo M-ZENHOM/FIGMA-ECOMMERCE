@@ -9,7 +9,10 @@ interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const Tag = React.forwardRef<HTMLButtonElement, TagProps>(
-  ({ className, tagTitle, withXIcon = false, Active, ...props }, ref) => {
+  (
+    { className, tagTitle, withXIcon = false, Active = true, ...props },
+    ref
+  ) => {
     return (
       <span
         className={cn(

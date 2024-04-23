@@ -9,8 +9,8 @@ export default function ProductsList() {
       <MaxWidthWrapper>
         <div className="flex items-center justify-center">
           <div className="pb-9 space-x-6">
-            <Tag Active tagTitle="Featured" />
-            <Tag tagTitle="Latest" />
+            <Tag tagTitle="Featured" />
+            <Tag tagTitle="Latest" Active={false} />
           </div>
         </div>
         <div className="grid grid-cols-4 gap-[20px]">
