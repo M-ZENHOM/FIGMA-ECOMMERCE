@@ -1,6 +1,6 @@
 import React from "react";
 import MaxWidthWrapper from "../MaxWidthWrapper";
-import ProductCard from "../ProductCard";
+import ProductCard from "../product/ProductCard";
 import { Tag } from "../ui/tag";
 
 export default function ProductsList() {

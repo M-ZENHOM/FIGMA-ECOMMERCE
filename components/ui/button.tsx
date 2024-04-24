@@ -20,12 +20,15 @@ const buttonVariants = cva(
         outlineBlack:
           "border border-black-900 text-black-900 hover:bg-black-900 hover:text-white-900",
         ghost: "text-black-900 hover:bg-black-100 hover:text-black-900",
+        boxSize:
+          "border border-black-100 text-black-500 hover:border-black-900 hover:text-black-900",
       },
       size: {
         default: "px-6 py-4",
         sm: "px-4 py-3",
-        lg: "px-8 py-6",
-        icon: "h-10 w-10",
+        lg: "w-[284px] h-[44px]",
+        icon: "h-[43px] w-[43px]",
+        boxSize: "h-8 w-8",
       },
     },
     defaultVariants: {

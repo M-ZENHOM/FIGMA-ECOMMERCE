@@ -5,7 +5,7 @@ import MaxWidthWrapper from "../MaxWidthWrapper";
 
 export default function Header() {
   return (
-    <header>
+    <header className="border-b border-white-100">
       <MaxWidthWrapper className="flex items-center justify-between py-[20px] px-4">
         <div className="flex items-center justify-between ">
           <Link

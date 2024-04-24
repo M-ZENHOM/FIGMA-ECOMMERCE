@@ -175,15 +175,15 @@ export const Icons = {
     <svg
       {...props}
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="6"
+      height="12"
       fill="none"
-      viewBox="0 0 24 24"
+      viewBox="0 0 6 12"
     >
       <path
-        fill="#5C5F6A"
+        fill="#71747E"
         fillRule="evenodd"
-        d="M9.188 12.533a.776.776 0 01-.004-1.009L14.05 6l.903 1.003-4.421 5.018L15 16.986 14.107 18l-4.919-5.467z"
+        d="M5.812 5.467c.249.277.251.729.004 1.009L.95 12l-.903-1.003 4.421-5.018L0 1.014.893 0l4.919 5.467z"
         clipRule="evenodd"
       ></path>
     </svg>
