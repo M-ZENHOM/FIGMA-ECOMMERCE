@@ -18,13 +18,13 @@ const tabs = [
 export default function ProductTabs() {
   const [active, setActive] = React.useState(tabs[0].tab);
   return (
-    <div className="flex space-x-7 items-center pb-[176px]">
-      <div className="flex flex-col gap-5">
+    <div className="flex flex-col md:flex-row space-x-7 items-center pb-[176px] max-sm:pt-10">
+      <div className="flex flex-row md:flex-col gap-5 max-sm:pb-10">
         {tabs.map((type) => (
           <span
             key={type.tab}
             className={cn(
-              "w-[241px] h-[41px] text-black-500 text-sm font-medium px-6 py-3 rounded-lg cursor-pointer capitalize inline-flex items-center",
+              "w-full max-w-[241px] h-[41px] text-black-500 text-sm font-medium px-6 py-3 rounded-lg cursor-pointer capitalize inline-flex items-center",
               {
                 "bg-white-100 text-black-900": type.tab === active,
               }

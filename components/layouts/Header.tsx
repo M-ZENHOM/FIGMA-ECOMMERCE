@@ -2,12 +2,13 @@ import { siteConfig } from "@/config/siteConfig";
 import Link from "next/link";
 import { Icons } from "../Icons";
 import MaxWidthWrapper from "../MaxWidthWrapper";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
     <header className="border-b border-white-100">
       <MaxWidthWrapper className="flex items-center justify-between py-[20px] px-4">
-        <div className="flex items-center justify-between ">
+        <div className="hidden md:flex md:items-center md:justify-between ">
           <Link
             className="text-xl capitalize pr-16 font-extrabold inline-flex items-center gap-4"
             href="/"
@@ -25,7 +26,7 @@ export default function Header() {
             ))}
           </ul>
         </div>
-        <div className="flex items-center gap-7">
+        <div className="hidden md:flex md:items-center gap-7">
           {/* this input need to refactor */}
           <div className="relative">
             <input
@@ -37,6 +38,7 @@ export default function Header() {
           <Icons.Cart className="w-6 h-6" />
           <Icons.UserTwo className="w-6 h-6" />
         </div>
+        <MobileNav />
       </MaxWidthWrapper>
     </header>
   );

@@ -19,7 +19,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </span>
           <h2 className="text-black-900 font-medium">Black Man Shirt</h2>
         </div>
-        <div className="flex items-center justify-between pb-24 gap-18">
+        <div className="flex flex-col md:flex-row items-center justify-between pb-24 gap-18">
           <ProductSlider />
           <ProductDetails {...DummyProductDetails} activeColor={"blue"} />
         </div>

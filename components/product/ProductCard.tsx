@@ -18,8 +18,10 @@ export default function ProductCard({ ...product }: CardProps) {
           width={237}
           height={312}
         />
-        <h2 className="text-sm font-medium pb-4 pt-6">{product.title}</h2>
-        <div className="flex items-center gap-5">
+        <h2 className="text-sm font-medium pb-4 pt-6 max-sm:text-center">
+          {product.title}
+        </h2>
+        <div className="flex items-center max-sm:justify-center gap-5">
           <Tag tagTitle={product.stock} className="text-xs" />
           <p className="text-black-600 text-sm">{product.price}</p>
         </div>

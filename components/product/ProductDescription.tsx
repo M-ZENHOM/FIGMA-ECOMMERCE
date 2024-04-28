@@ -2,9 +2,9 @@ import React from "react";
 
 export default function ProductDescription() {
   return (
-    <div className="w-full max-w-[727px] h-[324px]">
+    <div className="w-full max-w-[360px] md:max-w-[727px] h-[324px] ">
       <h2 className="text-base font-semibold pb-6">Detail</h2>
-      <p className="text-black-500 text-sm w-full max-w-[727px] pb-10">
+      <p className="text-black-500 text-sm  pb-10">
         Elevate your everyday style with our Men's Black T-Shirts, the ultimate
         wardrobe essential for modern men. Crafted with meticulous attention to
         detail and designed for comfort, these versatile black tees are a

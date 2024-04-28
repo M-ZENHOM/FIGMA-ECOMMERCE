@@ -12,7 +12,7 @@ export default function BestSelling() {
             <h2 className="text-2xl font-bold">Best Selling</h2>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-[20px]">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-[20px] max-sm:place-items-center">
           {DummyProducts.map((product) => (
             <ProductCard key={product.id} {...product} />
           ))}

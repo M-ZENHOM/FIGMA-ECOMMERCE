@@ -679,7 +679,7 @@ export const Icons = {
       viewBox="0 0 24 24"
     >
       <path
-        stroke="#5C5F6A"
+        stroke="#000000"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.7"

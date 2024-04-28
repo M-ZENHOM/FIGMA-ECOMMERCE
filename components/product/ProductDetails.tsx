@@ -24,7 +24,7 @@ export default function ProductDetails({
   activeColor,
 }: ProductDetailsProps) {
   return (
-    <div className="w-[534px] h-[574px] pt-1 pb-3">
+    <div className="max-sm:max-w-[350px] md:w-[534px] md:h-[574px] h-[400px] pt-1 pb-3">
       <div className="flex justify-between items-center">
         <h2 className="pb-4 text-black-900 font-bold text-2xl">{title}</h2>
         <Icons.Share className="cursor-pointer w-6 h-6" />

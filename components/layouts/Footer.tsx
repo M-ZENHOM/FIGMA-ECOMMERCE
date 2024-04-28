@@ -10,10 +10,10 @@ export default function Footer() {
     <>
       <NewsLetter />
       <footer className="pt-14">
-        <MaxWidthWrapper className="flex items-start justify-between pb-16">
-          <div className="w-full max-w-[272px]">
+        <MaxWidthWrapper className="flex md:flex-row flex-col md:items-start items-center justify-center md:justify-between pb-16 max-sm:px-4">
+          <div className="w-full max-w-[272px] max-sm:pb-10 max-sm:text-center">
             <Link
-              className="text-xl capitalize pr-16 font-extrabold inline-flex items-center gap-5 pb-4"
+              className="text-xl capitalize md:pr-16 font-extrabold inline-flex items-center max-sm:justify-center gap-5 pb-4"
               href="/"
             >
               <span className="w-[44px] h-[44px] rounded-md border  border-black-100 inline-flex items-center justify-center">
@@ -24,13 +24,13 @@ export default function Footer() {
             <p className="text-black-500 text-sm pb-7">
               DevCut is a YouTube channel for practical project-based learning.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center max-sm:justify-center gap-6">
               <Icons.Github />
               <Icons.Instagram />
               <Icons.Youtube />
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 ">
             {siteConfig.footer.map((item) => (
               <div key={item.title}>
                 <h2 className="uppercase text-sm text-black-300 pb-8">
@@ -49,7 +49,7 @@ export default function Footer() {
               </div>
             ))}
           </div>
-          <div className="space-y-8">
+          <div className="space-y-8 max-sm:pt-8">
             <h2 className="text-sm text-black-300 uppercase">
               ACCEPTED PAYMENTS
             </h2>
