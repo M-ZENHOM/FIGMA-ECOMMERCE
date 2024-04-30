@@ -1,16 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import { Tag } from "../ui/tag";
+import { cn } from "@/lib/utils";
 
 interface CardProps {
   image: string;
   title: string;
   price: string;
   stock: string;
+  className?: string;
 }
-export default function ProductCard({ ...product }: CardProps) {
+export default function ProductCard({ className, ...product }: CardProps) {
   return (
-    <div className="w-[256px] h-[434px]">
+    <div className={cn("w-[256px] h-[434px]", className)}>
       <div className="bg-white-100 rounded-[4px] w-[237px] h-[312px]">
         <Image
           src={product.image}

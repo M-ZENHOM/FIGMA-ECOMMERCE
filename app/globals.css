@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.75rem; 
+    height: 0.75rem; 
+    background-color: #0E1422; 
+    border-radius: 50%; 
+    cursor: pointer;
+  }
