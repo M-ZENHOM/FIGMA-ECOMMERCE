@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import { Icons } from "../Icons";
 import { siteConfig } from "@/config/siteConfig";
+import { UserButton } from "@clerk/nextjs";
+import UserAuth from "../UserAuth";
 
 export default function MobileNav() {
   return (
@@ -36,8 +38,10 @@ export default function MobileNav() {
               <Icons.Search className="absolute w-6 h-6 left-[15px] top-[50%] -translate-y-[50%]" />
             </div>
             <div className="flex items-center gap-4 ">
-              <Icons.Cart className="w-6 h-6" />
-              <Icons.UserTwo className="w-6 h-6" />
+              <Link href="/cart">
+                <Icons.Cart className="w-6 h-6" />
+              </Link>
+              <UserAuth />
             </div>
           </div>
         </div>

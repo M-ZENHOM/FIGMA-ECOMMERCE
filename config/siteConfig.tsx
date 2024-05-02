@@ -9,7 +9,7 @@ export const siteConfig = {
     },
     {
       title: "categories",
-      path: "/categories",
+      path: "/search",
     },
     {
       title: "about",
