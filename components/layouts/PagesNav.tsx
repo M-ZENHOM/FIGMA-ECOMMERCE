@@ -1,20 +1,23 @@
 import Link from "next/link";
 import React from "react";
 import { Icons } from "../Icons";
+import { cn } from "@/lib/utils";
 
 interface PagesNavProps {
   title?: string;
   secondTitle: string;
   bigTitle?: string;
+  className?: string;
 }
 
 export default function PagesNav({
   title,
   secondTitle,
   bigTitle,
+  className,
 }: PagesNavProps) {
   return (
-    <div className="flex flex-col py-5 px-4">
+    <div className={cn("flex flex-col py-5 px-4", className)}>
       {bigTitle && (
         <h2 className="text-black-900 font-bold text-2xl pb-3">{bigTitle}</h2>
       )}
