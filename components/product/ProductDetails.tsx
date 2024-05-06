@@ -3,17 +3,22 @@ import { Icons } from "../Icons";
 import { Tag } from "../ui/tag";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
+import AddToCartBtn from "../cart/AddToCartBtn";
 interface ProductDetailsProps {
+  id: number;
   title: string;
   rate: number;
   stock: number;
   reviews: number;
   price: string;
+  image: string;
   colors: string[];
   sizes: string[];
   activeColor: string;
 }
+
 export default function ProductDetails({
+  id,
   title,
   rate,
   reviews,
@@ -21,6 +26,7 @@ export default function ProductDetails({
   stock,
   colors,
   sizes,
+  image,
   activeColor,
 }: ProductDetailsProps) {
   return (
@@ -85,7 +91,17 @@ export default function ProductDetails({
       </div>
       <div className="flex flex-col">
         <div className="flex items-center space-x-5 pb-4">
-          <Button size="lg">Add to cart</Button>
+          <AddToCartBtn
+            item={{
+              id,
+              title,
+              price,
+              image: image,
+              color: "blue",
+              size: "M",
+              quantity: 1,
+            }}
+          />
           <Button size="icon" variant="outline">
             <Icons.Heart />
           </Button>

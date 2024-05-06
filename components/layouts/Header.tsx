@@ -4,6 +4,7 @@ import { Icons } from "../Icons";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import MobileNav from "./MobileNav";
 import UserAuth from "../UserAuth";
+import { CartButton } from "../CartButton";
 
 export default function Header() {
   return (
@@ -36,9 +37,7 @@ export default function Header() {
             />
             <Icons.Search className="absolute w-6 h-6 left-[15px] top-[50%] -translate-y-[50%]" />
           </div>
-          <Link href="/cart">
-            <Icons.Cart className="w-6 h-6" />
-          </Link>
+          <CartButton />
           <UserAuth />
         </div>
         <MobileNav />
