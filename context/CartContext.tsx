@@ -39,50 +39,58 @@ export const CartContextProvider: React.FC<ProviderTypes> = ({ children }) => {
 
   const addToCart = (item: CartItem) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
-    if (!existingItem) {
-      setCart([...cart, { ...item, quantity: 1 }]);
-    } else {
-      const newCart = cart.map((cartItem) => {
-        if (cartItem.id === item.id) {
-          return { ...cartItem, quantity: cartItem.quantity + 1 };
-        }
-        return cartItem;
-      });
-      setCart(newCart);
+    if (existingItem) {
+      const addItem = cart.map((cartItem) =>
+        cartItem.id === item.id
+          ? {
+              ...cartItem,
+              quantity: cartItem.quantity === 10 ? 10 : cartItem.quantity + 1,
+            }
+          : cartItem
+      );
+      return setCart(addItem);
     }
+    return setCart([...cart, { ...item, quantity: 1 }]);
   };
   const removeFromCart = (item: CartItem) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
-      const newCart = cart.filter((cartItem) => cartItem.id !== item.id);
-      setCart(newCart);
+      const cartAfterFiltered = cart.filter(
+        (cartItem) => cartItem.id !== item.id
+      );
+      return setCart(cartAfterFiltered);
     }
   };
   const itemQuantity = (item: CartItem, type: "increase" | "decrease") => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
     if (existingItem) {
-      if (type === "increase") {
-        const newCart = cart.map((cartItem) => {
-          if (cartItem.id === item.id) {
-            return {
-              ...cartItem,
-              quantity: cartItem.quantity === 10 ? 10 : cartItem.quantity + 1,
-            };
-          }
-          return cartItem;
-        });
-        setCart(newCart);
-      } else if (type === "decrease") {
-        const newCart = cart.map((cartItem) => {
-          if (cartItem.id === item.id) {
-            return {
-              ...cartItem,
-              quantity: cartItem.quantity <= 1 ? 1 : cartItem.quantity - 1,
-            };
-          }
-          return cartItem;
-        });
-        setCart(newCart);
+      switch (type) {
+        case "increase":
+          const itemIncrease = cart.map((cartItem) =>
+            cartItem.id === item.id
+              ? {
+                  ...cartItem,
+                  quantity:
+                    cartItem.quantity === 10 ? 10 : cartItem.quantity + 1,
+                }
+              : cartItem
+          );
+          setCart(itemIncrease);
+          break;
+        case "decrease":
+          const decreaseItem = cart.map((cartItem) =>
+            cartItem.id === item.id
+              ? {
+                  ...cartItem,
+                  quantity: cartItem.quantity === 1 ? 1 : cartItem.quantity - 1,
+                }
+              : cartItem
+          );
+          setCart(decreaseItem);
+          break;
+        default:
+          console.error("Invalid action type:", type);
+          break;
       }
     }
   };
