@@ -1,51 +1,60 @@
-import Link from "next/link";
-import React from "react";
-import { Icons } from "../Icons";
+"use client";
 import { siteConfig } from "@/config/siteConfig";
-import { UserButton } from "@clerk/nextjs";
-import UserAuth from "../UserAuth";
+import Link from "next/link";
+import { CartButton } from "../CartButton";
+import { Icons } from "../Icons";
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import UserAuthClient from "../UseAuthClient";
 
 export default function MobileNav() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
+
   return (
-    <div className="md:hidden flex items-center justify-between">
-      <Link
-        className="text-xl capitalize pr-16 font-extrabold inline-flex items-center gap-4"
-        href="/"
-      >
-        <span className="w-8 h-8 rounded-full bg-black-900 text-white-900 inline-flex items-center justify-center">
-          <Icons.Logo className="w-5 h-[26px]" />
-        </span>
-        {siteConfig.title}
-      </Link>
-      <div className="group">
-        <Icons.Menu className="w-6 h-6" />
-        <div className="fixed top-[0px] left-[0px] h-full w-[200px]   scale-0 group-hover:scale-100 bg-white-100 p-4 rounded-md z-10">
-          <Icons.X className="w-6 h-6 absolute right-2 top-2 " />
-          <ul className="flex flex-col items-start gap-4">
-            {siteConfig.nav.map((item) => (
-              <li key={item.path} className="text-base capitalize">
-                <Link href={item.path}>{item.title}</Link>
-              </li>
-            ))}
-          </ul>
-          <div className="md:hidden flex flex-col items-start border-t border-black-200 my-6 py-6 gap-5 ">
-            {/* this input need to refactor */}
-            <div className="relative">
-              <input
-                placeholder="Search Products"
-                className="rounded-md border border-black-100 py-[6px] px-[8px] pl-9 w-full max-w-[200px] placeholder:text-sm"
-              />
-              <Icons.Search className="absolute w-6 h-6 left-[15px] top-[50%] -translate-y-[50%]" />
-            </div>
-            <div className="flex items-center gap-4 ">
-              <Link href="/cart">
-                <Icons.Cart className="w-6 h-6" />
-              </Link>
-              <UserAuth />
-            </div>
+    <header className="block md:hidden border-b border-white-100">
+      <MaxWidthWrapper className="py-[20px] px-4">
+        <div className="w-full flex items-center justify-between">
+          <Link
+            className="text-xl capitalize font-extrabold inline-flex items-center gap-4"
+            href="/"
+          >
+            <span className="w-8 h-8 rounded-full bg-black-900 text-white-900 inline-flex items-center justify-center">
+              <Icons.Logo className="w-5 h-[26px]" />
+            </span>
+            {siteConfig.title}
+          </Link>
+          <div className="flex items-center gap-6 ">
+            <Icons.Menu
+              className={cn({ hidden: open === true })}
+              onClick={() => setOpen(true)}
+            />
+            <Icons.X
+              className={cn({ hidden: open === false })}
+              onClick={() => setOpen(false)}
+            />
+            <CartButton />
+            <UserAuthClient />
           </div>
         </div>
+      </MaxWidthWrapper>
+      <div
+        className={cn("w-dvw h-dvh bg-black-900 text-white-900", {
+          hidden: open === false,
+        })}
+      >
+        <ul className="flex flex-col items-start p-6 gap-7">
+          {siteConfig.nav.map((item) => (
+            <li key={item.path} className="text-sm md:text-lg capitalize">
+              <Link href={item.path}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </header>
   );
 }

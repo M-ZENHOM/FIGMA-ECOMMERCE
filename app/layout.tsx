@@ -6,6 +6,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CartContextProvider } from "@/context/CartContext";
+import MobileNav from "@/components/layouts/MobileNav";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,6 +25,7 @@ export default function RootLayout({
           <body className={inter.className}>
             <Navbar />
             <Header />
+            <MobileNav />
             {children}
             <Footer />
           </body>

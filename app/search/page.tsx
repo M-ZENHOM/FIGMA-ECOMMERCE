@@ -3,6 +3,7 @@ import SearchSideBar from "@/components/SearchSideBar";
 import PagesNav from "@/components/layouts/PagesNav";
 import ProductCard from "@/components/product/ProductCard";
 import { Tag } from "@/components/ui/tag";
+import { DummyProducts } from "@/config/dummyData";
 
 export default function SearchPage() {
   return (
@@ -42,34 +43,3 @@ export default function SearchPage() {
     </MaxWidthWrapper>
   );
 }
-
-const DummyProducts = [
-  {
-    id: 1,
-    title: "Classic Monochrome Tees",
-    stock: "IN STOCK",
-    price: "$35.00",
-    image: "/shirts/cover.png",
-  },
-  {
-    id: 2,
-    title: "Monochromatic Wardrobe",
-    stock: "IN STOCK",
-    price: "$27.00",
-    image: "/shirts/cover1.png",
-  },
-  {
-    id: 3,
-    title: "Essential Neutrals",
-    stock: "IN STOCK",
-    price: "$22.00",
-    image: "/shirts/cover2.png",
-  },
-  {
-    id: 4,
-    title: "UTRAANET Black",
-    stock: "IN STOCK",
-    price: "$43.00",
-    image: "/shirts/cover3.png",
-  },
-];
