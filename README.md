@@ -1,1 +1,1 @@
-Playing with Figma and React/Next.js and make it live!
+Turn Figma E-commerce Design to live Next.js E-commerce.
